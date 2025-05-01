@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zeno
 
-## Getting Started
+![](https://i.imgur.com/SKksFxz.png)
 
-First, run the development server:
+<h2>Description</h2>
 
-```bash
+Zeno is a conversational AI chatbot for businesses interact with theirdata. Zeno is designed to help you discover, explore, and manage your business reports with ease, empowering you to make data-driven decisions faster than ever before.
+
+LLM Chatbot built using Next.js for front-end and backend-end and a self-hosted convex database
+
+Features:
+1. LLM Chat interface
+2. Retrieval Augmented Generation
+3. Authentication
+4. About page
+5. Reports page
+6. Additional feature requests page
+
+
+<h2>Programming Language</h2>
+
+- Typescript & Javascript
+- Html & CSS
+
+<h2>Tech stack and CI/CD</h2>
+
+- Next.js
+- LangChain.js
+- ConvexDB
+- React.js
+- Shadcn
+- Zod
+- Docker
+- Ngnix
+- Git
+
+<h2>Environment Used </h2>
+
+- <b>Ubuntu</b>
+
+<h2>Run manually:</h2>
+
+<p align="left">
+ 
+1. Clone the project: Run this from the command line
+ 
+ ```commandline
+ git clone git@github.com:graphshade/zeno_convex.git
+ ```
+ 
+2. Change directory to zeno_convex and install the dependencies.
+   
+```commandline
+ cd zeno_convex
+ npm install
+ ```
+
+3. Set up the convex database. Follow instructions here to [self-host convex](https://stack.convex.dev/self-hosted-develop-and-deploy).
+ 
+4. Update environment variables in .env.local file if needed
+
+5. Update/generate the convex functions and run development server
+   
+```commandline
+npx convex dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<h2>Run with Docker:</h2>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<p align="left">
+ 
+1. Clone the project: Run this from the command line
+ 
+ ```commandline
+ git clone git@github.com:graphshade/zeno_convex.git
+ ```
+ 
+2. Change directory to zeno_convex.
+   
+```commandline
+ cd zeno_convex
+ ```
 
-## Learn More
+3. Set up the convex database. Follow instructions here to [self-host convex](https://stack.convex.dev/self-hosted-develop-and-deploy).
+ 
+4. Update environment variables in .env.local file if needed
 
-To learn more about Next.js, take a look at the following resources:
+5. Build docker image
+   
+```commandline
+docker build -t zeno_convex $(xargs < .env.local echo -n --build-arg ) 
+ ```
+ 
+6. Run docker container
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```commandline
+docker run --env-file .env.local -p 3000:3000 zeno_convex
+ ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<h2>More Images </h2>
 
-## Deploy on Vercel
+<p float="left">
+  <img src="https://i.imgur.com/f9xxfki.png" width="500" />
+  <img src="https://i.imgur.com/JFmmi7E.png" width="500" /> 
+  <img src="https://i.imgur.com/Mx9hrXJ.png" width="500" />
+  <img src="https://i.imgur.com/a5L6Sr6.png" width="500" />
+</p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
