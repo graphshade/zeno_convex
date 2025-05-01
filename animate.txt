@@ -1,0 +1,14 @@
+        <div className="relative mb-10">
+          <div className="center">
+            <h1>
+              <span> Zeno</span>
+              <span>Zeno</span>
+              <span>Zeno</span>
+            </h1>
+          </div>
+        </div>
+
+
+
+delete :zone.identifier files
+sudo find . -name "*.Identifier" -type f -delete
